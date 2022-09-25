@@ -1,0 +1,42 @@
+<form #formGroupRef="ngForm" (ngSubmit)="onFormSubmit(formGroupRef.form)">
+    <table>
+        <tr>
+            <td>
+                <h1>Login page</h1>
+            </td>
+        </tr>
+        <br />
+        <tr>
+            <td>EmailID/Username</td>
+            <td>
+                <!-- <input #textbox type = "text" (input)="onTextBoxEdited(textbox.value)" [value]="prop"/> -->
+                <input type="text" name="UserNameTextBox" [(ngModel)]="userName" #formControlRef="ngModel" required
+                    pattern=".{3,5}" />
+                <div *ngIf="formControlRef.errors">
+                    <output *ngIf="formControlRef.errors['required']">Error in COntrol</output>
+                    <output *ngIf="formControlRef.errors['pattern']">Invalid value entered</output>
+                </div>
+            </td>
+            <td>
+                <output>{{"dirty " + formControlRef.dirty}}</output><br />
+                <output>{{"enabled " + formControlRef.enabled}}</output><br />
+                <output>{{"pristine " + formControlRef.pristine}}</output><br />
+                <output>{{"touched " + formControlRef.touched}}</output><br />
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" />
+            </td>
+        </tr>
+        <tr>
+            <!-- <td><button>Login</button></td> -->
+            <input type="submit" value="Login" />
+            <td><button>Clear</button></td>
+        </tr>
+        <!-- <tr>
+            <input type="submit" value="Login"/>
+        </tr> -->
+    </table>
+</form>
