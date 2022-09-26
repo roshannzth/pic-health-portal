@@ -1,50 +1,41 @@
-<table>
-    <tr>
-        <td><h1>Sign up page</h1></td>
-    </tr>
-    <br/>
-    <tr>
-        <td>
-            EmailID/Username
-        </td>
-        <td>
-            <input type = "text"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Password
-        </td>
-        <td>
-            <input type = "password"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Retype Password
-        </td>
-        <td>
-            <input type = "password"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Gender
-        </td>
-        <td>
-            <input type = "text"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Age
-        </td>
-        <td>
-            <input type = "text"/>
-        </td>
-    </tr>
-    <tr>
-        <td><button>Sign Up</button></td>
-        <td><button>Clear</button></td>
-    </tr>
-</table>
+<div class="email-container">
+    <mat-card-title>Sign Up page</mat-card-title>
+</div>
+
+<div class="email-container">
+    <mat-form-field appearance="fill">
+        <mat-label>UserName</mat-label>
+        <input matInput placeholder="example@philips.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+</div>
+
+<div class="password-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+    </mat-form-field>
+</div>
+
+<div class="password-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Retype password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+    </mat-form-field>
+</div>
+
+<div class="email-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="example@philips.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+</div>
+
+<section>
+    <div class="example-button-row">
+        <button mat-raised-button color="primary">Sign Up</button>
+        <button mat-raised-button color="primary">Clear</button>
+    </div>
+</section>
+<mat-divider></mat-divider>

@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import {Component} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
+/** @title Form field with error messages */
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.css'],
 })
 export class LoginComponent {
+  email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required]);
+  hide = true;
 
-  userName:string=""
-  constructor() { }
+  getErrorMessage() {
+    console.log(this.email);
+    if (this.email.hasError('required')) {
+      return 'You must enter a value';
+    }
 
-  changePropValue(){
-    this.userName = (Math.random() * 100).toString();
+    return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
   onFormSubmit(formGroup:FormGroup){
@@ -24,4 +30,12 @@ export class LoginComponent {
     }
   }
 
+  onLoginClick() {
+
+  }
+
+  onClearClick() {
+    this.email.reset();
+    this.password.reset();
+  }
 }

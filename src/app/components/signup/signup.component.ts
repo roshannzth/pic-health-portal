@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 
+/** @title Form field with error messages */
 @Component({
   selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  templateUrl: 'signup.component.html',
+  styleUrls: ['signup.component.css'],
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
+  email = new FormControl('', [Validators.required, Validators.email]);
+  hide = true;
 
-  constructor() { }
+  getErrorMessage() {
+    console.log(this.email);
+    if (this.email.hasError('required')) {
+      return 'You must enter a value';
+    }
 
-  ngOnInit(): void {
+    return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-
 }
