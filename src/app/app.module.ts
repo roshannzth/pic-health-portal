@@ -9,15 +9,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialExampleModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule, FormsModule, BrowserAnimationsModule, MatSliderModule, MaterialExampleModule, ReactiveFormsModule
+    BrowserModule, FormsModule, BrowserAnimationsModule, MatSliderModule, MaterialExampleModule, ReactiveFormsModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 <div class="email-container">
-  <mat-card-title>Login page</mat-card-title>
+  <mat-card-title>Login</mat-card-title>
 </div>
+<br/>
 <form #formGroupRef="ngForm" (ngSubmit)="onFormSubmit(formGroupRef.form)">
   <div class="email-container">
     <mat-form-field appearance="fill">
@@ -23,5 +24,4 @@
       <button (click)="onClearClick()" mat-raised-button color="primary">Clear</button>
     </div>
   </section>
-  <mat-divider></mat-divider>
 </form>
