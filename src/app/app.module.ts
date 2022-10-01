@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { MainCardsComponent } from './components/main-cards/main-cards.component';
+import { AccountsService } from './services/accounts.services';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { MainCardsComponent } from './components/main-cards/main-cards.component
       BrowserAnimationsModule,
         MaterialExampleModule,
           AppRoutingModule,
-           AccountsModule
+           AccountsModule,
+           HttpClientModule
   ],
-  providers: [],
+  providers: [AccountsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
