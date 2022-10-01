@@ -1,1 +1,21 @@
-<p>home works!</p>
+<mat-card>
+    <mat-card-title>Welcome to Philips Health Portal</mat-card-title>
+    <mat-card-content>
+
+
+
+
+
+        <section>
+            <div class="example-button-row">
+                <!-- <button mat-flat-button color="primary">Login</button>
+                <button mat-flat-button color="primary">Sign up</button> -->
+                <a mat-flat-button [routerLink]="'./login'">Login</a>
+                <a mat-flat-button [routerLink]="'./signup'">Signup</a>
+            </div>
+        </section>
+    </mat-card-content>
+    <mat-card-content>
+        <router-outlet></router-outlet>
+    </mat-card-content>
+</mat-card>
