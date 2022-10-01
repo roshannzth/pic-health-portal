@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 /** @title Form field with error messages */
 @Component({
@@ -12,6 +13,8 @@ export class LoginComponent {
   password = new FormControl('', [Validators.required]);
   hide = true;
 
+  constructor(private routerService:Router){}
+
   getErrorMessage() {
     console.log(this.email);
     if (this.email.hasError('required')) {
@@ -22,12 +25,15 @@ export class LoginComponent {
   }
 
   onFormSubmit(formGroup:FormGroup){
-    if(formGroup.valid){
-      console.log("Valid form");
-    }
-    else{
-      console.log(formGroup);
-    }
+    // if(formGroup.valid){
+    //   console.log("Valid form");
+    // }
+    // else{
+    //   console.log(formGroup);
+    // }
+    console.log("Form submitted");
+    this.routerService.navigate(['/main-cards']);
+
   }
 
   onLoginClick() {

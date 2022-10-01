@@ -7,11 +7,13 @@ import { MaterialExampleModule } from '../material.module';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AccountsModule } from './accounts/accounts.module';
+import { MainCardsComponent } from './components/main-cards/main-cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MainCardsComponent
   ],
   imports: [
     BrowserModule,
